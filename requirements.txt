@@ -1,0 +1,13 @@
+fastapi
+
+uvicorn
+pdfminer.six
+python-docx
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+openai
+python-dotenv
+
