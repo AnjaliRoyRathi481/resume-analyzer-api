@@ -1,9 +1,16 @@
-import re
+import fitz
+
 def extract_text_from_pdf(file_path):
-    return "Python SQL Excel FastAPI"
+    doc = fitz.open(file_path)
+    text = ""
+    for page in doc:
+        text += page.get_text()
+    return text
 
 def extract_skills(text):
-    skills = ["python", "sql", "excel", "fastapi", "docker"]
+    skills = ["python", "sql", "excel", "fastapi", "docker",
+              "machine learning", "deep learning", "pandas",
+              "numpy", "tensorflow", "pytorch", "flask", "aws"]
 
     found_skills = []
 
@@ -12,3 +19,4 @@ def extract_skills(text):
             found_skills.append(skill)
 
     return found_skills
+    
